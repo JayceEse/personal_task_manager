@@ -5,10 +5,10 @@ from sqlalchemy.orm import sessionmaker
 DATABASE_URL = "sqlite:///./tasks.db"
 
 Base = declarative_base()
-engine = create_engine(DATABASE_URL, connect_args={"check_same_thread: False"})
+engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
 SessionLocal = sessionmaker(autocommit=False, autoFlush=False, bind=engine)
 
-class Taskl(Base):
+class Task(Base):
     __tablename__= "tasks"
 
     id = Column(Integer, primary_key=True, index=True)
