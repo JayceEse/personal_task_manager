@@ -1,12 +1,14 @@
-import './index.css'
+import {Outlet, Link} from 'react-router-dom'
 
-function App() {
-
-  return (
-    <>
-      <div className="text-blue-700 px-96">Hello World</div>
-    </>
+export default function App() {
+  return(
+    <div className='p-4'>
+      <nav className='space-x-4 mb-6'>
+        <Link to="/">Home</Link>
+        <Link to="tasks">Tasks</Link>
+        <Link to="about">About</Link>
+      </nav>
+      <Outlet/>
+    </div>
   )
 }
-
-export default App
